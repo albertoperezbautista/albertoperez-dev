@@ -1,8 +1,8 @@
 import Head from "next/head";
-const SalimovHead = () => {
+const HeadComponent = () => {
   return (
     <Head>
-      <title>Salimov - Horizontal Personal Portfolio</title>
+      <title>ALBERTO PEREZ Personal Portfolio</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       {/* Template Google Fonts */}
@@ -28,4 +28,4 @@ const SalimovHead = () => {
     </Head>
   );
 };
-export default SalimovHead;
+export default HeadComponent;

@@ -15,14 +15,17 @@ const Header = () => {
               <li>
                 <span id="about-link">About</span>
               </li>
+
               <li>
-                <span id="portfolio-link">Portfolio</span>
+                <span id="skills-link">Skills</span>
               </li>
+
+              <li>
+                <span id="experience-link">Experience</span>
+              </li>
+
               <li>
                 <span id="contact-link">Contact</span>
-              </li>
-              <li>
-                <span id="blog-link">Blog</span>
               </li>
             </ul>
           </nav>
@@ -55,19 +58,22 @@ const Header = () => {
                 <span>About</span>
               </a>
             </li>
+
             <li>
-              <a href="#portfolio">
-                <span>Portfolio</span>
+              <a href="#skills">
+                <span>Skills</span>
               </a>
             </li>
+
+            <li>
+              <a href="#experience">
+                <span>Experience</span>
+              </a>
+            </li>
+
             <li>
               <a href="#contact">
                 <span>Contact</span>
-              </a>
-            </li>
-            <li>
-              <a href="#blog">
-                <span>Blog</span>
               </a>
             </li>
           </ul>

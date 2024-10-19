@@ -27,8 +27,8 @@ const Switcher = () => {
         <div className="content-switcher">
           <h4>COLOR SWITCHER</h4>
           <ul>
-            {colors.map((color) => (
-              <li>
+            {colors.map((color, i) => (
+              <li key={i}>
                 <a
                   href="#"
                   title={color.name}

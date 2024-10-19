@@ -10,7 +10,7 @@ export const jqueryFuntion = () => {
     var preloader = $("#preloader");
     setTimeout(function () {
       preloader.addClass("preloaded");
-    }, 800);
+    }, 600);
     if ($(window).width() > 1024) {
       setTimeout(function () {
         $(".header-inner").addClass("animated fadeInDown");
@@ -36,20 +36,22 @@ export const jqueryFuntion = () => {
     /* ----------------------------------------------------------- */
 
     var homewidth = $(".home").width() - 10;
-    var aboutwidth = homewidth + $(".about").width() + $(".facts").width() - 10;
-    var portfoliowidth =
-      aboutwidth +
-      $(".portfolio .single-item .main-content").width() +
-      $(".portfolio .single-item .details").width() +
-      250 +
-      65 +
-      300 +
-      $(".clients").width() -
-      10;
+    var aboutwidth = homewidth + $(".about").width() - 10;
+    var skillswidth = aboutwidth + $(".skills").width() - 10;
+    var experiencewidth = skillswidth + $(".experience").width() - 10;
+    // var portfoliowidth =
+    //   experiencewidth +
+    //   $(".portfolio .single-item .main-content").width() +
+    //   $(".portfolio .single-item .details").width() +
+    //   250 +
+    //   65 +
+    //   300;
+    // $(".clients").width() -
+    // 10;
     var contactwidth =
-      portfoliowidth + $(".contact").width() + $(".testimonials").width() - 10;
-    var blogwidth =
-      contactwidth + $(".blog").width() + $(".copyright").width() - 10;
+      experiencewidth + $(".contact").width() + $(".copyright").width() - 10;
+    // var blogwidth =
+    //   contactwidth + $(".blog").width() + $(".copyright").width() - 10;
 
     /* ----------------------------------------------------------- */
     /*  HORIZONTAL SCROLL & REVEAL ANIMATIONS
@@ -91,6 +93,12 @@ export const jqueryFuntion = () => {
     }
 
     function checkScroll() {
+      console.log("homewidth:::: ", homewidth);
+      console.log("aboutwidth: ", aboutwidth);
+      console.log("skillswidth: ", skillswidth);
+      console.log("experiencewidth: ", experiencewidth);
+      console.log("contactwidth: ", contactwidth);
+
       if (
         Math.abs(parseInt($(".mCSB_container").css("left"))) > homewidth &&
         Math.abs(parseInt($(".mCSB_container").css("left"))) < aboutwidth
@@ -99,23 +107,32 @@ export const jqueryFuntion = () => {
         $("#about-link").addClass("active");
       } else if (
         Math.abs(parseInt($(".mCSB_container").css("left"))) > aboutwidth &&
-        Math.abs(parseInt($(".mCSB_container").css("left"))) < portfoliowidth
+        Math.abs(parseInt($(".mCSB_container").css("left"))) < skillswidth
       ) {
         $(".menu ul li span").removeClass("active");
-        $("#portfolio-link").addClass("active");
+        $("#skills-link").addClass("active");
       } else if (
-        Math.abs(parseInt($(".mCSB_container").css("left"))) > portfoliowidth &&
+        Math.abs(parseInt($(".mCSB_container").css("left"))) > skillswidth &&
+        Math.abs(parseInt($(".mCSB_container").css("left"))) < experiencewidth
+      ) {
+        $(".menu ul li span").removeClass("active");
+        $("#experience-link").addClass("active");
+      } else if (
+        Math.abs(parseInt($(".mCSB_container").css("left"))) >
+          experiencewidth &&
         Math.abs(parseInt($(".mCSB_container").css("left"))) < contactwidth
       ) {
         $(".menu ul li span").removeClass("active");
         $("#contact-link").addClass("active");
-      } else if (
-        Math.abs(parseInt($(".mCSB_container").css("left"))) > contactwidth &&
-        Math.abs(parseInt($(".mCSB_container").css("left"))) < blogwidth
-      ) {
-        $(".menu ul li span").removeClass("active");
-        $("#blog-link").addClass("active");
-      } else {
+      }
+      // else if (
+      //   Math.abs(parseInt($(".mCSB_container").css("left"))) > contactwidth &&
+      //   Math.abs(parseInt($(".mCSB_container").css("left"))) < blogwidth
+      // ) {
+      //   $(".menu ul li span").removeClass("active");
+      //   $("#blog-link").addClass("active");
+      // }
+      else {
         $(".menu ul li span").removeClass("active");
         $("#home-link").addClass("active");
       }
@@ -218,11 +235,23 @@ export const jqueryFuntion = () => {
       });
     });
 
-    $("#portfolio-link").on("click", function () {
-      $("#wrapper").mCustomScrollbar("scrollTo", "#portfolio", {
+    $("#skills-link").on("click", function () {
+      $("#wrapper").mCustomScrollbar("scrollTo", "#skills", {
         scrollInertia: 1500,
       });
     });
+
+    $("#experience-link").on("click", function () {
+      $("#wrapper").mCustomScrollbar("scrollTo", "#experience", {
+        scrollInertia: 1500,
+      });
+    });
+
+    // $("#portfolio-link").on("click", function () {
+    //   $("#wrapper").mCustomScrollbar("scrollTo", "#portfolio", {
+    //     scrollInertia: 1500,
+    //   });
+    // });
 
     $("#contact-link").on("click", function () {
       $("#wrapper").mCustomScrollbar("scrollTo", "#contact", {
@@ -230,11 +259,11 @@ export const jqueryFuntion = () => {
       });
     });
 
-    $("#blog-link").on("click", function () {
-      $("#wrapper").mCustomScrollbar("scrollTo", "#blog", {
-        scrollInertia: 1500,
-      });
-    });
+    // $("#blog-link").on("click", function () {
+    //   $("#wrapper").mCustomScrollbar("scrollTo", "#blog", {
+    //     scrollInertia: 1500,
+    //   });
+    // });
 
     $("#menu li a").on("click", function () {
       $("#checkboxmenu").trigger("click");

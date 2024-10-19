@@ -2,13 +2,11 @@ import Header from "@/src/components/Header";
 import ScrollBar from "@/src/components/ScrollBar";
 import About from "@/src/components/sections/About";
 import Blog from "@/src/components/sections/Blog";
-import Clients from "@/src/components/sections/Clients";
 import Contact from "@/src/components/sections/Contact";
 import Copyright from "@/src/components/sections/Copyright";
-import Facts from "@/src/components/sections/Facts";
+import Experience from "@/src/components/sections/Experiencie";
 import Home from "@/src/components/sections/Home";
-import Portfolio from "@/src/components/sections/Portfolio";
-import Testimonials from "@/src/components/sections/Testimonials";
+import Skills from "@/src/components/sections/Skills";
 import Separator from "@/src/components/Separator";
 import { jqueryFuntion } from "@/src/utilits";
 import { Fragment, useEffect } from "react";
@@ -24,18 +22,23 @@ const Index = () => {
         <div id="wrapper">
           <main className="flex-column-mobile">
             <Home />
+            <Separator type={"up"} />
+
             <About />
             <Separator type={"down"} />
-            <Facts />
+            <Skills />
             <Separator type={"up"} />
-            <Portfolio />
+            <Experience />
+
+            {/* <Separator type={"down"} /> */}
+            {/* <Portfolio /> */}
+            {/* <Separator type={"up"} /> */}
+            {/* <Testimonials /> */}
             <Separator type={"down"} />
-            <Testimonials />
-            <Separator type={"up"} />
             <Contact />
-            <Separator type={"down"} />
-            <Clients />
             <Separator type={"up"} />
+            {/* <Clients /> */}
+            {/* <Separator type={"up"} /> */}
             <Blog />
             <Separator type={"down"} />
             <Copyright />
