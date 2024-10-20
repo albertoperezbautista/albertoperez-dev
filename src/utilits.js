@@ -4,59 +4,11 @@ import "malihu-custom-scrollbar-plugin";
 export const jqueryFuntion = () => {
   $(window).on("load", function () {
     /* ----------------------------------------------------------- */
-    /*  PAGE PRELOADER
-    /* ----------------------------------------------------------- */
-
-    var preloader = $("#preloader");
-    setTimeout(function () {
-      preloader.addClass("preloaded");
-    }, 600);
-    if ($(window).width() > 1024) {
-      setTimeout(function () {
-        $(".header-inner").addClass("animated fadeInDown");
-      }, 1500);
-      setTimeout(function () {
-        $(".home>div>div h1 span span").addClass("animated fadeInUp");
-        $(".home>div>div .intro").addClass("animated fadeInUp");
-        $(".home .cta").addClass("animated fadeInUp");
-      }, 2200);
-    } else {
-      setTimeout(function () {
-        $(".header-inner").addClass("animated fadeInDown");
-      }, 1100);
-      setTimeout(function () {
-        $(".home>div>div h1 span span").addClass("animated fadeInUp");
-        $(".home>div>div .intro").addClass("animated fadeInUp");
-        $(".home .cta").addClass("animated fadeInUp");
-      }, 1800);
-    }
-
-    /* ----------------------------------------------------------- */
-    /*  SET ACTIVE MENU ITEM ON SCROLL
-    /* ----------------------------------------------------------- */
-
-    var homewidth = $(".home").width() - 10;
-    var aboutwidth = homewidth + $(".about").width() - 10;
-    var skillswidth = aboutwidth + $(".skills").width() - 10;
-    var experiencewidth = skillswidth + $(".experience").width() - 10;
-    // var portfoliowidth =
-    //   experiencewidth +
-    //   $(".portfolio .single-item .main-content").width() +
-    //   $(".portfolio .single-item .details").width() +
-    //   250 +
-    //   65 +
-    //   300;
-    // $(".clients").width() -
-    // 10;
-    var contactwidth =
-      experiencewidth + $(".contact").width() + $(".copyright").width() - 10;
-    // var blogwidth =
-    //   contactwidth + $(".blog").width() + $(".copyright").width() - 10;
-
-    /* ----------------------------------------------------------- */
     /*  HORIZONTAL SCROLL & REVEAL ANIMATIONS
     /* ----------------------------------------------------------- */
+  });
 
+  $(document).ready(function () {
     function animateContent() {
       var divWidth = $("#wrapper").width() - $(window).width() / 2 + 270;
       var animated = $(".animated-layer");
@@ -93,12 +45,6 @@ export const jqueryFuntion = () => {
     }
 
     function checkScroll() {
-      console.log("homewidth:::: ", homewidth);
-      console.log("aboutwidth: ", aboutwidth);
-      console.log("skillswidth: ", skillswidth);
-      console.log("experiencewidth: ", experiencewidth);
-      console.log("contactwidth: ", contactwidth);
-
       if (
         Math.abs(parseInt($(".mCSB_container").css("left"))) > homewidth &&
         Math.abs(parseInt($(".mCSB_container").css("left"))) < aboutwidth
@@ -124,18 +70,37 @@ export const jqueryFuntion = () => {
       ) {
         $(".menu ul li span").removeClass("active");
         $("#contact-link").addClass("active");
-      }
-      // else if (
-      //   Math.abs(parseInt($(".mCSB_container").css("left"))) > contactwidth &&
-      //   Math.abs(parseInt($(".mCSB_container").css("left"))) < blogwidth
-      // ) {
-      //   $(".menu ul li span").removeClass("active");
-      //   $("#blog-link").addClass("active");
-      // }
-      else {
+      } else {
         $(".menu ul li span").removeClass("active");
         $("#home-link").addClass("active");
       }
+    }
+    /* ----------------------------------------------------------- */
+    /*  PAGE PRELOADER
+    /* ----------------------------------------------------------- */
+
+    var preloader = $("#preloader");
+    setTimeout(function () {
+      preloader.addClass("preloaded");
+    }, 600);
+    if ($(window).width() > 1024) {
+      setTimeout(function () {
+        $(".header-inner").addClass("animated fadeInDown");
+      }, 1500);
+      setTimeout(function () {
+        $(".home>div>div h1 span span").addClass("animated fadeInUp");
+        $(".home>div>div .intro").addClass("animated fadeInUp");
+        $(".home .cta").addClass("animated fadeInUp");
+      }, 2200);
+    } else {
+      setTimeout(function () {
+        $(".header-inner").addClass("animated fadeInDown");
+      }, 1100);
+      setTimeout(function () {
+        $(".home>div>div h1 span span").addClass("animated fadeInUp");
+        $(".home>div>div .intro").addClass("animated fadeInUp");
+        $(".home .cta").addClass("animated fadeInUp");
+      }, 1800);
     }
 
     if ($("#wrapper").length) {
@@ -164,9 +129,28 @@ export const jqueryFuntion = () => {
         new WOW.WOW().init();
       }
     }
-  });
+    /* ----------------------------------------------------------- */
+    /*  SET ACTIVE MENU ITEM ON SCROLL
+    /* ----------------------------------------------------------- */
 
-  $(document).ready(function () {
+    var homewidth = $(".home").width() - 10;
+    var aboutwidth = homewidth + $(".about").width() - 10;
+    var skillswidth = aboutwidth + $(".skills").width() - 10;
+    var experiencewidth = skillswidth + $(".experience").width() - 10;
+    // var portfoliowidth =
+    //   experiencewidth +
+    //   $(".portfolio .single-item .main-content").width() +
+    //   $(".portfolio .single-item .details").width() +
+    //   250 +
+    //   65 +
+    //   300;
+    // $(".clients").width() -
+    // 10;
+    var contactwidth =
+      experiencewidth + $(".contact").width() + $(".copyright").width() - 10;
+    // var blogwidth =
+    //   contactwidth + $(".blog").width() + $(".copyright").width() - 10;
+
     /* ----------------------------------------------------------- */
     /*  SAFARI BROWSER FIXES
     /* ----------------------------------------------------------- */
@@ -289,5 +273,7 @@ export const jqueryFuntion = () => {
         });
       }
     });
+
+    ///////////////////////////////////////////////////////////////////
   });
 };

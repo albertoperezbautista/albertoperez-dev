@@ -1,3 +1,4 @@
+"use client";
 import Header from "@/src/components/Header";
 import ScrollBar from "@/src/components/ScrollBar";
 import About from "@/src/components/sections/About";
@@ -13,6 +14,7 @@ import { Fragment, useEffect } from "react";
 const Index = () => {
   useEffect(() => {
     jqueryFuntion();
+    console.log("ejecuta");
   });
 
   return (
@@ -39,8 +41,8 @@ const Index = () => {
             <Separator type={"up"} />
             {/* <Clients /> */}
             {/* <Separator type={"up"} /> */}
-            <Blog />
-            <Separator type={"down"} />
+            {/* <Blog /> */}
+            {/* <Separator type={"down"} /> */}
             <Copyright />
           </main>
         </div>

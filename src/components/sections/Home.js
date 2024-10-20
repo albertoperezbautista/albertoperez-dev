@@ -28,11 +28,6 @@ const Home = () => {
         </span>
         {/* CALL TO ACTION ENDS */}
       </section>
-      <img
-        alt=""
-        className="separator hide-mobile"
-        src="assets/separator.png"
-      />
     </>
   );
 };
