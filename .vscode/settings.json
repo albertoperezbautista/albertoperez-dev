@@ -1,0 +1,49 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+ 
+  "emmet.excludeLanguages": [],
+  "emmet.includeLanguages": {
+    "markdown": "html",
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.triggerExpansionOnTab": true,
+  
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "never"
+    },
+  
+  
+  "files.exclude": {
+    "**/*.js.map": {
+      "when": "$(basename)"
+    },
+    "**/node_modules": true
+  },
+  "html.autoClosingTags": true,
+  "javascript.autoClosingTags": true,
+  "javascript.suggest.completeFunctionCalls": true,
+  "typescript.suggest.completeFunctionCalls": false,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": false,
+  "javascript.inlayHints.parameterNames.enabled": "all",
+  // "typescript.inlayHints.parameterNames.enabled": "all",
+  "javascript.suggest.autoImports": true,
+  "search.exclude": {
+    "**/coverage": true,
+    "**/node_modules": true
+  },
+  "typescript.autoClosingTags": true,
+  "typescript.suggest.autoImports": true,
+
+  "editor.formatOnSave": true,
+  "javascript.format.enable": false,
+  "javascript.validate.enable": true,
+  "typescript.format.enable": false,
+  "typescript.validate.enable": true,
+  "[javascript][typescript][typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
+
