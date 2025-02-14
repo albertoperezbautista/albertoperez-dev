@@ -7,7 +7,7 @@ import { Fragment } from "react";
 const App = ({ Component, pageProps }) => {
   return (
     <Fragment>
-      <HeadComponent />
+      {/* <HeadComponent /> */}
       <Switcher />
       <Preloader />
       <Component {...pageProps} />

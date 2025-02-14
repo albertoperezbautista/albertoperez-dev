@@ -1,6 +1,6 @@
 const Copyright = () => {
   return (
-    <section className="copyright">
+    <section className="copyright" id="copyright">
       <img
         alt=""
         className="z-1 hide-mobile"

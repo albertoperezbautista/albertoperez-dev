@@ -2,11 +2,11 @@ const About = () => {
   return (
     <>
       <section className="about main-section flex-column-mobile" id="about">
-        <img
+        {/* <img
           alt=""
           className="separator hide-mobile"
           src="assets/separator.png"
-        />
+        /> */}
         {/* INFO HOLDER STARTS */}
         <div className="info flex-column-mobile">
           {/* IMAGE STARTS */}

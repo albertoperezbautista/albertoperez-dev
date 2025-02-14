@@ -45,16 +45,33 @@ export const jqueryFuntion = () => {
     }
 
     function checkScroll() {
+      console.log(
+        "medida:: ",
+        Math.abs(parseInt($(".mCSB_container").css("left")))
+      );
+
+      console.log("homewidth::: ", homewidth);
+      console.log("aboutwidth::: ", aboutwidth);
+      console.log("skillswidth::: ", skillswidth);
+      console.log("experiencewidth::: ", experiencewidth);
+      console.log("contactwidth::: ", contactwidth);
+
+      //medida 1463
+      //homewidth:::  1864
+      //aboutwidth:::  3728
       if (
         Math.abs(parseInt($(".mCSB_container").css("left"))) > homewidth &&
         Math.abs(parseInt($(".mCSB_container").css("left"))) < aboutwidth
       ) {
+        console.log("1111111111");
+
         $(".menu ul li span").removeClass("active");
         $("#about-link").addClass("active");
       } else if (
         Math.abs(parseInt($(".mCSB_container").css("left"))) > aboutwidth &&
         Math.abs(parseInt($(".mCSB_container").css("left"))) < skillswidth
       ) {
+        console.log("2222222222222");
         $(".menu ul li span").removeClass("active");
         $("#skills-link").addClass("active");
       } else if (
@@ -71,6 +88,8 @@ export const jqueryFuntion = () => {
         $(".menu ul li span").removeClass("active");
         $("#contact-link").addClass("active");
       } else {
+        console.log("00000000000");
+
         $(".menu ul li span").removeClass("active");
         $("#home-link").addClass("active");
       }
@@ -103,53 +122,68 @@ export const jqueryFuntion = () => {
       }, 1800);
     }
 
-    if ($("#wrapper").length) {
-      if ($(window).width() > 1024) {
-        $("#wrapper").mCustomScrollbar({
-          axis: "x",
-          theme: "dark-3",
-          keyboard: { enable: true, scrollType: "stepless" },
-          advanced: {
-            autoExpandHorizontalScroll: true,
-          },
-          mouseWheel: {
-            scrollAmount: 400,
-          },
-          callbacks: {
-            whileScrolling: function () {
-              animateContent();
-              checkScroll();
-            },
-          },
-        });
-      } else {
-        if (typeof window !== "undefined") {
-          window.WOW = require("wowjs");
+    function initScrollbar() {
+      if ($("#wrapper").length) {
+        if ($(window).width() > 1024) {
+          if (!$("#wrapper").hasClass("mCustomScrollbar")) {
+            $("#wrapper").mCustomScrollbar({
+              axis: "x",
+              theme: "dark-3",
+              keyboard: { enable: true, scrollType: "stepless" },
+              advanced: {
+                autoExpandHorizontalScroll: true,
+              },
+              mouseWheel: {
+                scrollAmount: 400,
+              },
+              callbacks: {
+                whileScrolling: function () {
+                  animateContent();
+                  checkScroll();
+                },
+              },
+            });
+          }
+        } else {
+          if ($("#wrapper").hasClass("mCustomScrollbar")) {
+            $("#wrapper").mCustomScrollbar("destroy"); // Destruye el scrollbar
+          }
+
+          if (typeof window !== "undefined") {
+            window.WOW = require("wowjs");
+          }
+          new WOW.WOW().init(); // Reinicia WOW.js
         }
-        new WOW.WOW().init();
       }
     }
+
+    // Ejecutar al cargar la página
+    initScrollbar();
+
+    // Agregar evento resize para actualizar cuando el tamaño cambie
+    $(window).resize(function () {
+      initScrollbar();
+    });
+
     /* ----------------------------------------------------------- */
     /*  SET ACTIVE MENU ITEM ON SCROLL
     /* ----------------------------------------------------------- */
 
-    var homewidth = $(".home").width() - 10;
-    var aboutwidth = homewidth + $(".about").width() - 10;
-    var skillswidth = aboutwidth + $(".skills").width() - 10;
-    var experiencewidth = skillswidth + $(".experience").width() - 10;
-    // var portfoliowidth =
-    //   experiencewidth +
-    //   $(".portfolio .single-item .main-content").width() +
-    //   $(".portfolio .single-item .details").width() +
-    //   250 +
-    //   65 +
-    //   300;
-    // $(".clients").width() -
-    // 10;
+    // var homewidth = $(".home").width() - 10;
+    var homewidth = $(".home").width() - $(".home").width() * 0.25;
+    // var homewidth = $(".home").width();
+
+    var aboutwidth =
+      homewidth + $(".about").width() - $(".about").width() * 0.25;
+    // var aboutwidth = $(".about").offset().left;
+
+    var skillswidth =
+      aboutwidth + $(".skills").width() - $(".skills").width() * 0.25;
+    var experiencewidth =
+      skillswidth + $(".resume").width() - $(".resume").width() * 0.25;
+
     var contactwidth =
-      experiencewidth + $(".contact").width() + $(".copyright").width() - 10;
-    // var blogwidth =
-    //   contactwidth + $(".blog").width() + $(".copyright").width() - 10;
+      experiencewidth + $(".contact").width() + $(".copyright").width();
 
     /* ----------------------------------------------------------- */
     /*  SAFARI BROWSER FIXES
@@ -226,28 +260,16 @@ export const jqueryFuntion = () => {
     });
 
     $("#experience-link").on("click", function () {
-      $("#wrapper").mCustomScrollbar("scrollTo", "#experience", {
+      $("#wrapper").mCustomScrollbar("scrollTo", "#resume", {
         scrollInertia: 1500,
       });
     });
-
-    // $("#portfolio-link").on("click", function () {
-    //   $("#wrapper").mCustomScrollbar("scrollTo", "#portfolio", {
-    //     scrollInertia: 1500,
-    //   });
-    // });
 
     $("#contact-link").on("click", function () {
       $("#wrapper").mCustomScrollbar("scrollTo", "#contact", {
         scrollInertia: 1500,
       });
     });
-
-    // $("#blog-link").on("click", function () {
-    //   $("#wrapper").mCustomScrollbar("scrollTo", "#blog", {
-    //     scrollInertia: 1500,
-    //   });
-    // });
 
     $("#menu li a").on("click", function () {
       $("#checkboxmenu").trigger("click");

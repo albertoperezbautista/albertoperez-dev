@@ -5,11 +5,6 @@ const Skills = () => {
         className="about skills  main-section flex-column-mobile "
         id="skills"
       >
-        <img
-          alt=""
-          className="z-1 hide-mobile opposite-separator"
-          src="assets/separator-opposite.png"
-        />
         {/* SKILLS STARTS */}
         <div className="skills flex-column-mobile">
           {/* TITLE STARTS */}

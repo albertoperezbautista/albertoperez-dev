@@ -1,4 +1,11 @@
 const Header = () => {
+  const closeMenu = () => {
+    const checkbox = document.getElementById("checkboxmenu");
+    if (checkbox) {
+      checkbox.checked = false; // Cierra el menú
+    }
+  };
+
   return (
     <header>
       {/* Desktop Menu Starts */}
@@ -49,30 +56,27 @@ const Header = () => {
           <span />
           <ul className="list-unstyled" id="menu">
             <li>
-              <a href="#home">
+              <a href="#home" onClick={closeMenu}>
                 <span>Home</span>
               </a>
             </li>
             <li>
-              <a href="#my-photo">
+              <a href="#my-photo" onClick={closeMenu}>
                 <span>About</span>
               </a>
             </li>
-
             <li>
-              <a href="#skills">
+              <a href="#skills" onClick={closeMenu}>
                 <span>Skills</span>
               </a>
             </li>
-
             <li>
-              <a href="#experience">
+              <a href="#experience" onClick={closeMenu}>
                 <span>Experience</span>
               </a>
             </li>
-
             <li>
-              <a href="#contact">
+              <a href="#contact" onClick={closeMenu}>
                 <span>Contact</span>
               </a>
             </li>

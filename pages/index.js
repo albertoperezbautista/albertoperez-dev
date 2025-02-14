@@ -2,7 +2,6 @@
 import Header from "@/src/components/Header";
 import ScrollBar from "@/src/components/ScrollBar";
 import About from "@/src/components/sections/About";
-import Blog from "@/src/components/sections/Blog";
 import Contact from "@/src/components/sections/Contact";
 import Copyright from "@/src/components/sections/Copyright";
 import Experience from "@/src/components/sections/Experiencie";
@@ -14,7 +13,6 @@ import { Fragment, useEffect } from "react";
 const Index = () => {
   useEffect(() => {
     jqueryFuntion();
-    console.log("ejecuta");
   });
 
   return (
