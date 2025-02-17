@@ -19,7 +19,7 @@ SwiperCore.use([
   Virtual,
 ]);
 
-export const salimovSlider = {
+export const apSlider = {
   portfolio: {
     loop: true,
     navigation: {

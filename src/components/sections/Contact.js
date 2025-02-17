@@ -22,7 +22,7 @@ const Contact = () => {
             <i className="fa fa-phone" />
             <p>
               <span className="small-text">phone</span>
-              +216 21 184 010
+              +593 99 853 2625
             </p>
           </div>
           {/* CONTACT ITEM ENDS */}
@@ -31,7 +31,7 @@ const Contact = () => {
             <i className="fa fa-location-dot" />
             <p>
               <span className="small-text">address</span>
-              London, England
+              Ambato, Ecuador
             </p>
           </div>
           {/* CONTACT ITEM ENDS */}
@@ -42,7 +42,7 @@ const Contact = () => {
             <i className="fa fa-envelope" />
             <p>
               <span className="small-text">email</span>
-              contact@steven.net
+              alberth_perez@outlook.com
             </p>
           </div>
           {/* CONTACT ITEM ENDS */}
@@ -52,23 +52,14 @@ const Contact = () => {
             <span className="small-text">follow me</span>
             <ul className="social">
               <li>
-                <a href="#">
+                <a href="https://github.com/albertoperezbautista">
                   <i className="fa-brands fa-github" />
                 </a>
               </li>
+
               <li>
-                <a href="#">
-                  <i className="fa-brands fa-twitter" />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i className="fa-brands fa-dribbble" />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i className="fa-brands fa-facebook" />
+                <a href="https://www.linkedin.com/in/albertoperezbautista/">
+                  <i className="fa-brands fa-linkedin" />
                 </a>
               </li>
             </ul>
